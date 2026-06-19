@@ -72,17 +72,17 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* פס זהב דק עליון — כמו הרפרנס */}
-      <div className="h-[3px] w-full bg-gold" />
+      {/* פס אקסנט עליון — נחושת → זהב → תכלת, נותן חיוּת */}
+      <div className="h-1 w-full bg-[linear-gradient(90deg,var(--color-ember-bright),var(--color-gold),var(--color-sky-deep))]" />
 
       <div
-        className={`border-b bg-paper/95 backdrop-blur-xl transition-shadow duration-300 ${
+        className={`header-tint border-b bg-paper/95 backdrop-blur-xl transition-shadow duration-300 ${
           scrolled ? "border-line shadow-md shadow-ink/5" : "border-transparent"
         }`}
       >
-        <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:h-[92px] lg:px-8">
           <a href="#home" onClick={(e) => goTo(e, "home")} aria-label="לראש העמוד">
-            <Logo variant="onLight" imgClassName="h-14 w-auto" />
+            <Logo variant="onLight" imgClassName="h-16 w-auto lg:h-[76px]" />
           </a>
 
           {/* ניווט — דסקטופ */}
