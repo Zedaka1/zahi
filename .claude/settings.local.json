@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm *)",
+      "WebFetch(domain:bramygroup.com)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3001\" -UseBasicParsing -TimeoutSec 60; \"STATUS: $\\($r.StatusCode\\)\"; \"LENGTH: $\\($r.Content.Length\\)\" } catch { \"ERROR: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3001\" -UseBasicParsing -TimeoutSec 60; \"STATUS: $\\($r.StatusCode\\)  LENGTH: $\\($r.Content.Length\\)\" } catch { \"ERROR: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3001\" -UseBasicParsing -TimeoutSec 90; \"STATUS: $\\($r.StatusCode\\)  LENGTH: $\\($r.Content.Length\\)\" } catch { \"ERROR: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3001\" -UseBasicParsing -TimeoutSec 90; \"PAGE: $\\($r.StatusCode\\)\" } catch { \"PAGE ERROR: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(cd C:\\\\Users\\\\ilyai\\\\projects\\\\zahi; npx tsc --noEmit 2>&1 | Select-Object -First 40; \"exit=$LASTEXITCODE\")"
+    ]
+  }
+}

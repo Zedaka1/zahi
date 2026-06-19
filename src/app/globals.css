@@ -1,0 +1,304 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────
+   מערכת עיצוב: נייבי + זהב + לבן (בהשראת הרפרנס)
+   הערה: שמות הטוקנים "ember" ממופים לכחול הנייבי
+   של המותג (כדי לשמור על אקסנט אחיד בכל הרכיבים).
+   ─────────────────────────────────────────────── */
+@theme {
+  /* רקעים כהים — ניסוי "ג'ינג'י": פחם־חם/אספרסו (לפוטר, מרקיזה, הירו, lightbox)
+     לחזרה לנייבי, החזר את הערכים שבהערה:
+     ink:#1e3661  ink-2:#26416f  ink-3:#31538a  steel:#aab6cc */
+  --color-ink: #211a15;
+  --color-ink-2: #2c231c;
+  --color-ink-3: #3b2e25;
+  --color-steel: #c2b3a3;
+
+  /* בהיר — לגוף הדף (ניסוי ג'ינג'י: גוונים חמים עדינים; ערכי הקור המקוריים בהערה)
+     sand:#f3f5fa  sand-2:#e7ecf5  text:#1b2638  muted:#5b6577  line:#e3e8f1 */
+  --color-paper: #ffffff;
+  --color-sand: #f7f4ef;
+  --color-sand-2: #ece4d9;
+  --color-text: #221d17;
+  --color-muted: #6c6155;
+  --color-line: #e8ded2;
+
+  /* אקסנט המותג — ניסוי "ג'ינג'י": נחושת/טרהקוטה חמה
+     לחזרה לכחול הנייבי, החזר את הערכים שבהערה:
+     ember:#24437e  ember-deep:#173158  ember-bright:#3f63a8  ember-soft:#7d97c8 */
+  --color-ember: #b1531c;
+  --color-ember-deep: #8a3d12;
+  --color-ember-bright: #d97b3e;
+  --color-ember-soft: #e3ab7e;
+
+  /* אקסנט זהב עדין */
+  --color-gold: #c6a662;
+  --color-gold-deep: #a07f3e;
+
+  --font-display: var(--font-suez), Georgia, serif;
+  --font-body: var(--font-assistant), system-ui, sans-serif;
+
+  --shadow-soft: 0 18px 44px -24px rgba(33, 27, 22, 0.28);
+  --shadow-lift: 0 28px 60px -26px rgba(33, 27, 22, 0.34);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-paper);
+    color: var(--color-text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-ember);
+    color: #fff;
+  }
+
+  section[id] {
+    scroll-margin-top: 84px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-sand);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-sand-2);
+    border-radius: 999px;
+    border: 3px solid var(--color-sand);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ember);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+
+  .display-xl {
+    font-family: var(--font-display);
+    line-height: 0.98;
+    font-size: clamp(2.6rem, 7.6vw, 5.8rem);
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    color: var(--color-ember-deep);
+  }
+  .eyebrow::before {
+    content: "";
+    height: 2px;
+    width: 26px;
+    flex: none;
+    border-radius: 2px;
+    background: var(--color-gold);
+  }
+  .eyebrow.eyebrow-center {
+    justify-content: center;
+  }
+
+  /* סימני פינה זהב — מוטיב שרטוט אדריכלי על מסגרות */
+  .corner-frame {
+    position: relative;
+  }
+  .corner-frame::before,
+  .corner-frame::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .corner-frame::before {
+    top: 14px;
+    right: 14px;
+    border-top: 2px solid var(--color-gold);
+    border-right: 2px solid var(--color-gold);
+  }
+  .corner-frame::after {
+    bottom: 14px;
+    left: 14px;
+    border-bottom: 2px solid var(--color-gold);
+    border-left: 2px solid var(--color-gold);
+  }
+
+  .text-ember-gradient {
+    background: linear-gradient(100deg, var(--color-ember), var(--color-ember-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* גרעין/בטון — לרקעים כהים בלבד */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* (הרשת הוסרה לבקשת הלקוח — נשאר no-op כדי לא לשבור רכיבים) */
+  .blueprint-grid {
+    background-image: none;
+  }
+
+  /* זוהר אקסנט רך (ניסוי ג'ינג'י: נחושת; לכחול — rgba(36, 67, 126, 0.08)) */
+  .ember-glow {
+    background: radial-gradient(
+      55% 55% at 50% 0%,
+      rgba(177, 83, 28, 0.08),
+      transparent 70%
+    );
+  }
+
+  /* כרטיס בהיר סטנדרטי */
+  .card {
+    background-color: var(--color-paper);
+    border: 1px solid var(--color-line);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-rise {
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee-rtl 32s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+}
+
+/* ───────────────────────────────────────────────
+   נגישות (a11y)
+   ─────────────────────────────────────────────── */
+
+/* דילוג לתוכן */
+.skip-link {
+  position: fixed;
+  top: -120px;
+  right: 1rem;
+  z-index: 200;
+  background: var(--color-ember);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.7rem;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* מיקוד מקלדת ברור */
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* מצבי נגישות (מוחלים על html דרך תפריט הנגישות).
+   הערה: ניגודיות וגווני-אפור מיושמים דרך שכבת-על backdrop-filter ברכיב
+   הנגישות — ולא דרך filter על html/body, כי filter על אב שובר position:fixed. */
+html.a11y-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+html.a11y-readable,
+html.a11y-readable * {
+  font-family: Arial, "Segoe UI", system-ui, sans-serif !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.08em !important;
+  line-height: 1.7 !important;
+}
+html.a11y-bigcursor,
+html.a11y-bigcursor * {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Cpath d='M4 2 20 11 12 12 16 20 13 21 9 13 4 18Z' fill='%23111' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E")
+      4 2,
+    auto !important;
+}
+html.a11y-nomotion *,
+html.a11y-nomotion *::before,
+html.a11y-nomotion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
