@@ -30,15 +30,15 @@ export function Hero() {
           className="absolute inset-0 -z-20 bg-gradient-to-br from-ink-2 via-ink to-ink-3"
         />
       )}
-      {/* שכבת נייבי לקריאוּת הטקסט — כהה יותר בצד ימין שבו הטקסט */}
+      {/* שכבת כהות לקריאוּת הטקסט — סקרים אחיד וכהה במובייל, גרדיאנט צדדי עדין בדסקטופ */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-l from-ink/66 via-ink/34 to-ink/12"
+        className="absolute inset-0 -z-10 bg-ink/78 sm:bg-transparent sm:bg-gradient-to-l sm:from-ink/92 sm:from-20% sm:via-ink/55 sm:via-70% sm:to-transparent"
       />
       {/* זוהר עדין */}
       <div
         aria-hidden
-        className="absolute -top-24 right-0 -z-10 h-[420px] w-[620px] rounded-full bg-ember-bright/8 blur-[130px]"
+        className="absolute -top-24 right-0 -z-10 h-[380px] w-[560px] rounded-full bg-ember-bright/10 blur-[140px]"
       />
 
       {/* תוכן ראשי */}
@@ -47,7 +47,7 @@ export function Hero() {
           <div className="max-w-2xl text-right">
             <p className="mb-5 flex items-center gap-3 text-sm font-bold tracking-[0.12em] text-gold">
               <span className="h-px w-10 bg-gold" />
-              {site.name} {site.nickname} · {site.license}
+              {site.name} {site.nickname}
             </p>
 
             <h1 className="display-xl font-display text-white">
@@ -55,10 +55,10 @@ export function Hero() {
               <span className="mt-2 block text-gold">מבטון עד מפתח</span>
             </h1>
 
-            {/* קו זהב מתחת לכותרת */}
-            <span className="mt-6 block h-1 w-24 rounded-full bg-gold" />
+            {/* קו "מתכת מותכת" מתחת לכותרת — נחושת לוהטת → זהב */}
+            <span className="mt-6 block h-1 w-28 rounded-full bg-[linear-gradient(90deg,var(--color-ember),var(--color-gold))]" />
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-steel">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 sm:text-steel">
               {site.subtitle}
             </p>
 

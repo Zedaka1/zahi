@@ -36,6 +36,26 @@ export function SiteHeader() {
     return () => observer.disconnect();
   }, []);
 
+  // נעילת גלילת הרקע כשהתפריט הנייד פתוח
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
+
+  // מעבר לדסקטופ סוגר את התפריט — כדי לא להשאיר נעילת גלילה תקועה
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1280px)");
+    const onChange = () => {
+      if (mq.matches) setOpen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   const goTo = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
       e.preventDefault();
@@ -43,6 +63,7 @@ export function SiteHeader() {
       if (!el) return;
       setActive(id);
       setOpen(false);
+      document.body.style.overflow = ""; // שחרור הנעילה לפני גלילה תוכניתית
       el.scrollIntoView({ behavior: "smooth", block: "start" });
       history.replaceState(null, "", `#${id}`);
     },

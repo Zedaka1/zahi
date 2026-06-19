@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 /* ───────────────────────────────────────────────
-   מערכת עיצוב: נייבי + זהב + לבן (בהשראת הרפרנס)
-   הערה: שמות הטוקנים "ember" ממופים לכחול הנייבי
-   של המותג (כדי לשמור על אקסנט אחיד בכל הרכיבים).
+   מערכת עיצוב: "ג'ינג'י מותך" — נחושת לוהטת + זהב + פחם מחושל
+   הטוקנים "ember" = אקסנט הג'ינג'י (נחושת־כתום אדמדם, רב־גוני),
+   "ink" = רקעים כהים מחושלים. אקסנט אחיד בכל הרכיבים.
    ─────────────────────────────────────────────── */
 @theme {
-  /* רקעים כהים — ניסוי "ג'ינג'י": פחם־חם/אספרסו (לפוטר, מרקיזה, הירו, lightbox)
+  /* רקעים כהים — גרפיט חם רך (פוטר, מרקיזה, הירו, lightbox) — לא כמעט־שחור, פחות "לוהט"
      לחזרה לנייבי, החזר את הערכים שבהערה:
      ink:#1e3661  ink-2:#26416f  ink-3:#31538a  steel:#aab6cc */
-  --color-ink: #211a15;
-  --color-ink-2: #2c231c;
-  --color-ink-3: #3b2e25;
-  --color-steel: #c2b3a3;
+  --color-ink: #2a241f;
+  --color-ink-2: #362e27;
+  --color-ink-3: #483b31;
+  --color-steel: #c9bbab;
 
   /* בהיר — לגוף הדף (ניסוי ג'ינג'י: גוונים חמים עדינים; ערכי הקור המקוריים בהערה)
      sand:#f3f5fa  sand-2:#e7ecf5  text:#1b2638  muted:#5b6577  line:#e3e8f1 */
@@ -23,13 +23,15 @@
   --color-muted: #6c6155;
   --color-line: #e8ded2;
 
-  /* אקסנט המותג — ניסוי "ג'ינג'י": נחושת/טרהקוטה חמה
+  /* אקסנט הג'ינג'י — נחושת לוהטת חיה (ember = main, deep = הדגשה, bright = זוהר, soft = טינט)
      לחזרה לכחול הנייבי, החזר את הערכים שבהערה:
      ember:#24437e  ember-deep:#173158  ember-bright:#3f63a8  ember-soft:#7d97c8 */
-  --color-ember: #b1531c;
-  --color-ember-deep: #8a3d12;
-  --color-ember-bright: #d97b3e;
-  --color-ember-soft: #e3ab7e;
+  --color-ember: #c04a18;
+  --color-ember-deep: #8f300e;
+  --color-ember-bright: #ed7a33;
+  --color-ember-soft: #f3c49c;
+  /* ניצוץ מותך לגרדיאנט הכותרות (בהיר אך בטוח לטקסט גדול) */
+  --color-ember-spark: #db5b1f;
 
   /* אקסנט זהב עדין */
   --color-gold: #c6a662;
@@ -40,6 +42,37 @@
 
   --shadow-soft: 0 18px 44px -24px rgba(33, 27, 22, 0.28);
   --shadow-lift: 0 28px 60px -26px rgba(33, 27, 22, 0.34);
+}
+
+/* ───────────────────────────────────────────────
+   ערכת צבע חלופית — כחול נייבי (קרה).
+   מופעלת ע"י כפתור החלפת הנושא (html.theme-navy) ומחזירה
+   את כל הפלטה הקרה המקורית — רקעים, טקסט ואקסנט.
+   ─────────────────────────────────────────────── */
+html.theme-navy {
+  --color-ink: #1e3661;
+  --color-ink-2: #26416f;
+  --color-ink-3: #31538a;
+  --color-steel: #aab6cc;
+
+  --color-sand: #f3f5fa;
+  --color-sand-2: #e7ecf5;
+  --color-text: #1b2638;
+  --color-muted: #5b6577;
+  --color-line: #e3e8f1;
+
+  --color-ember: #24437e;
+  --color-ember-deep: #173158;
+  --color-ember-bright: #3f63a8;
+  --color-ember-soft: #7d97c8;
+  --color-ember-spark: #3f63a8;
+}
+html.theme-navy .ember-glow {
+  background: radial-gradient(
+    55% 55% at 50% 0%,
+    rgba(36, 67, 126, 0.08),
+    transparent 70%
+  );
 }
 
 @layer base {
@@ -103,10 +136,10 @@
   }
   .eyebrow::before {
     content: "";
-    height: 2px;
-    width: 26px;
+    width: 8px;
+    height: 8px;
     flex: none;
-    border-radius: 2px;
+    transform: rotate(45deg);
     background: var(--color-gold);
   }
   .eyebrow.eyebrow-center {
@@ -139,8 +172,14 @@
     border-left: 2px solid var(--color-gold);
   }
 
+  /* כותרת "מתכת מחוממת" — חלודה עמוקה → נחושת → ניצוץ */
   .text-ember-gradient {
-    background: linear-gradient(100deg, var(--color-ember), var(--color-ember-deep));
+    background: linear-gradient(
+      105deg,
+      var(--color-ember-deep),
+      var(--color-ember) 48%,
+      var(--color-ember-spark)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -162,11 +201,11 @@
     background-image: none;
   }
 
-  /* זוהר אקסנט רך (ניסוי ג'ינג'י: נחושת; לכחול — rgba(36, 67, 126, 0.08)) */
+  /* זוהר נחושת לוהטת רך (לכחול המקורי — rgba(36, 67, 126, 0.08)) */
   .ember-glow {
     background: radial-gradient(
       55% 55% at 50% 0%,
-      rgba(177, 83, 28, 0.08),
+      rgba(192, 74, 24, 0.1),
       transparent 70%
     );
   }
@@ -223,11 +262,11 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(50%);
   }
 }
 .animate-marquee {
-  animation: marquee-rtl 32s linear infinite;
+  animation: marquee-rtl 90s linear infinite;
 }
 .marquee-mask {
   -webkit-mask-image: linear-gradient(
@@ -301,4 +340,72 @@ html.a11y-nomotion *::after {
   animation: none !important;
   transition: none !important;
   scroll-behavior: auto !important;
+}
+
+/* ───────────────────────────────────────────────
+   "כלים חיים" — אנימציית אייקוני השירותים בריחוף
+   ─────────────────────────────────────────────── */
+.tool {
+  transform-origin: center;
+}
+.group:hover .tool-construction {
+  animation: tool-tap 0.6s ease;
+}
+.group:hover .tool-plumbing {
+  animation: tool-shake 0.5s ease;
+}
+.group:hover .tool-electricity {
+  animation: tool-flash 0.55s ease;
+}
+.group:hover .tool-drywall {
+  animation: tool-bob 0.6s ease;
+}
+.group:hover .tool-flooring {
+  animation: tool-bob 0.6s ease;
+}
+.group:hover .tool-paint {
+  animation: tool-roll 0.55s ease;
+}
+.group:hover .tool-waterproof {
+  animation: tool-drip 0.7s ease;
+}
+.group:hover .tool-turnkey {
+  animation: tool-spin 0.7s ease;
+}
+
+@keyframes tool-tap {
+  0%, 100% { transform: rotate(0); }
+  35% { transform: rotate(-16deg); }
+  65% { transform: rotate(8deg); }
+}
+@keyframes tool-shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  25% { transform: translateX(-2px) rotate(-7deg); }
+  75% { transform: translateX(2px) rotate(7deg); }
+}
+@keyframes tool-flash {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  45% { opacity: 0.4; transform: scale(1.15); }
+}
+@keyframes tool-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes tool-roll {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  50% { transform: translateX(3px) rotate(12deg); }
+}
+@keyframes tool-drip {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+@keyframes tool-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group:hover .tool {
+    animation: none !important;
+  }
 }

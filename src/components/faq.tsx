@@ -10,7 +10,7 @@ export function Faq() {
   return (
     <section
       id="faq"
-      className="relative border-y border-line bg-sand py-24 lg:py-32"
+      className="relative border-y border-line bg-sand py-12 lg:py-24"
     >
       <div className="mx-auto max-w-3xl px-5 lg:px-8">
         <Reveal>

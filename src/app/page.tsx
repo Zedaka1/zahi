@@ -13,6 +13,7 @@ import { AccessibilityWidget } from "@/components/accessibility-widget";
 import { CookieConsent } from "@/components/cookie-consent";
 import { LegalModals } from "@/components/legal";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
 
       {/* נגישות, עוגיות ומסמכים משפטיים */}
       <WhatsAppButton />
+      <ThemeToggle />
       <AccessibilityWidget />
       <CookieConsent />
       <LegalModals />

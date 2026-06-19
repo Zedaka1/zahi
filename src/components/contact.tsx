@@ -34,7 +34,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="ember-glow relative overflow-hidden bg-paper py-24 lg:py-32"
+      className="ember-glow relative overflow-hidden bg-paper py-12 lg:py-24"
     >
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
@@ -44,10 +44,10 @@ export function Contact() {
             <h2 className="font-display text-4xl leading-tight text-text sm:text-5xl">
               מוכנים להתחיל?
               <br />
-              <span className="text-ember-gradient">בוא נדבר.</span>
+              <span className="text-ember-gradient">בואו נדבר.</span>
             </h2>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-              ספר לי על הפרויקט שלך ואחזור אליך בהקדם עם כל המידע. פגישת הייעוץ
+              ספרו לי על הפרויקט שלכם ואחזור אליכם בהקדם עם כל המידע. פגישת הייעוץ
               והערכת העלות — ללא התחייבות.
             </p>
 
@@ -100,7 +100,7 @@ export function Contact() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     type="text"
-                    placeholder="איך קוראים לך?"
+                    placeholder="איך קוראים לכם?"
                     className="input"
                   />
                 </Field>
@@ -138,7 +138,7 @@ export function Contact() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={4}
-                    placeholder="כמה מילים על מה שאתה רוצה לעשות..."
+                    placeholder="כמה מילים על מה שאתם רוצים לעשות..."
                     className="input resize-none"
                   />
                 </Field>

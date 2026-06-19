@@ -12,7 +12,7 @@ const points = [
 
 export function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-paper py-24 lg:py-32">
+    <section id="about" className="relative overflow-hidden bg-paper py-12 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2 lg:items-center lg:px-8">
         {/* פלייסהולדר פורטרט */}
         <Reveal>

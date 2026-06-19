@@ -75,7 +75,7 @@ export function Gallery() {
   return (
     <section
       id="gallery"
-      className="relative border-y border-line bg-sand py-24 lg:py-32"
+      className="relative border-y border-line bg-sand py-12 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
@@ -166,9 +166,19 @@ export function Gallery() {
             className="relative w-full max-w-4xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10">
-              <ProjectVisual project={current} />
-            </div>
+            {current.image ? (
+              // התמונה בפרופורציות המקוריות, מותאמת למסך — בלי חיתוך
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={current.image}
+                alt={current.title}
+                className="mx-auto max-h-[80vh] w-auto max-w-full rounded-2xl border border-white/10 object-contain"
+              />
+            ) : (
+              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10">
+                <ProjectVisual project={current} />
+              </div>
+            )}
             <div className="mt-4 flex items-center justify-between gap-4">
               <div>
                 <span className="text-sm font-bold text-gold">

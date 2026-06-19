@@ -3,7 +3,7 @@ import { Reveal } from "./reveal";
 
 export function Process() {
   return (
-    <section id="process" className="relative bg-paper py-24 lg:py-32">
+    <section id="process" className="relative bg-paper py-12 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
           <div className="text-center">
@@ -12,23 +12,23 @@ export function Process() {
               תהליך העבודה — <span className="text-ember-gradient">צעד אחר צעד</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-muted">
-              שיטה מסודרת שמלווה אותך מהרגע הראשון ועד מסירת המפתח, כך שתמיד תדע
+              שיטה מסודרת שמלווה אתכם מהרגע הראשון ועד מסירת המפתח, כך שתמיד תדעו
               בדיוק איפה הפרויקט עומד.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5">
           {steps.map((s, i) => (
             <Reveal
               key={s.num}
               delay={(i % 3) * 90}
-              className="group card relative overflow-hidden rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+              className="group card relative overflow-hidden rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-7"
             >
-              <span className="font-display text-6xl leading-none text-sand-2 transition-colors group-hover:text-ember/30">
+              <span className="font-display text-5xl leading-none text-sand-2 transition-colors group-hover:text-ember/30 sm:text-6xl">
                 {s.num}
               </span>
-              <h3 className="mt-3 font-display text-xl text-text">
+              <h3 className="mt-3 font-display text-lg text-text sm:text-xl">
                 {s.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
