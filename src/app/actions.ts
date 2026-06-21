@@ -46,11 +46,10 @@ export async function sendLead(input: LeadInput): Promise<LeadResult> {
   const type = clean(input.type, 60);
   const message = String(input.message ?? "").trim().slice(0, 2000);
 
-  // חובה: שם, טלפון בן 10 ספרות שמתחיל ב-0, ופירוט
+  // חובה: שם, מספר נייד ישראלי תקין (10 ספרות, מתחיל ב-05), ופירוט
   if (
     name.length < 2 ||
-    phoneDigits.length !== 10 ||
-    phoneDigits[0] !== "0" ||
+    !/^05\d{8}$/.test(phoneDigits) ||
     message.length < 2
   ) {
     return { ok: false, error: "invalid" };

@@ -18,9 +18,10 @@ function validate(v: { name: string; phone: string; message: string }): Errors {
   if (v.name.trim().length < 2) errors.name = "נא למלא שם מלא";
 
   const digits = onlyDigits(v.phone);
-  if (!digits) errors.phone = "נא למלא מספר טלפון";
-  else if (digits.length !== 10) errors.phone = "מספר הטלפון חייב להכיל 10 ספרות";
-  else if (digits[0] !== "0") errors.phone = "המספר צריך להתחיל ב-0";
+  if (!digits) errors.phone = "נא להזין מספר טלפון";
+  else if (!/^05\d{8}$/.test(digits))
+    errors.phone =
+      "מספר הטלפון אינו תקין — יש להזין מספר נייד ישראלי בן 10 ספרות (לדוגמה 050-1234567)";
 
   if (v.message.trim().length < 2)
     errors.message = "נא לכתוב כמה מילים על הפרויקט";
