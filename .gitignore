@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# מדריך התקנה פנימי — נשאר מקומי, לא עולה למאגר
+docs/*vercel-resend.md
