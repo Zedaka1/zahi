@@ -12,12 +12,10 @@ export const site = {
   license: "רישיון קבלן ג-100",
   experience: "ניסיון של שנים בעבודות בנייה וגמר",
 
-  // TODO: להחליף במספר הטלפון האמיתי של צחי
-  phone: "050-000-0000",
-  phoneHref: "tel:+972500000000",
-  whatsapp: "https://wa.me/972500000000",
-  // TODO: אימייל אמיתי
-  email: "tzahi@example.co.il",
+  phone: "052-431-0383",
+  phoneHref: "tel:+972524310383",
+  whatsapp: "https://wa.me/972524310383",
+  email: "Zedaka1@gmail.com",
 
   // תמונת רקע להירו — להחליף בכל נתיב מתוך public/images
   heroImage: "/images/HERO2.png",
