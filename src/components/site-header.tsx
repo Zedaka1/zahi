@@ -72,8 +72,8 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* פס אקסנט עליון — נחושת → זהב → תכלת, נותן חיוּת */}
-      <div className="h-1 w-full bg-[linear-gradient(90deg,var(--color-ember-bright),var(--color-gold),var(--color-sky-deep))]" />
+      {/* פס אקסנט עליון — גרדיאנט של גוון האקסנט הפעיל בלבד (מתחלף עם הערכה) */}
+      <div className="h-1 w-full bg-[linear-gradient(90deg,var(--color-ember-deep),var(--color-ember),var(--color-ember-bright))]" />
 
       <div
         className={`header-tint border-b bg-paper/95 backdrop-blur-xl transition-shadow duration-300 ${
