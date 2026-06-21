@@ -46,8 +46,8 @@ export function About() {
             <span className="text-ember-gradient">{site.nickname}</span>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted">
-            אני צחי, קבלן שיפוצים כלליים עם רישיון קבלן ג-100. אני לוקח פרויקטים
-            של וילות, בתים פרטיים ומבני ציבור — ומוביל אותם{" "}
+            קבלן שיפוצים כלליים בעל רישיון קבלן ג-100, המתמחה בפרויקטים של וילות,
+            בתים פרטיים ומבני ציבור — ומלווה כל פרויקט{" "}
             <span className="font-semibold text-text">מהבטון ועד המפתח</span>.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-muted">
