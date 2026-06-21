@@ -146,7 +146,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-ember px-6 py-4 text-base font-bold text-white transition-transform hover:scale-[1.02]"
+                className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-ember px-6 py-4 text-base font-bold text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 <WhatsappIcon width={20} height={20} />
                 שליחה בוואטסאפ

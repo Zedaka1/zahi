@@ -117,7 +117,7 @@ export function SiteHeader() {
             <a
               href="#contact"
               onClick={(e) => goTo(e, "contact")}
-              className="hidden rounded-full bg-ember px-5 py-2.5 text-sm font-bold text-white transition-transform hover:scale-[1.03] sm:inline-flex"
+              className="hidden rounded-full bg-ember px-5 py-2.5 text-sm font-bold text-white transition-transform hover:scale-[1.03] active:scale-[0.98] sm:inline-flex"
             >
               לתיאום פגישה
             </a>

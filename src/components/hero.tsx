@@ -65,7 +65,7 @@ export function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-paper px-7 py-4 text-base font-bold text-ember shadow-lift transition-transform hover:scale-[1.03]"
+                className="group inline-flex items-center gap-2 rounded-full bg-paper px-7 py-4 text-base font-bold text-ember shadow-lift transition-transform hover:scale-[1.03] active:scale-[0.98]"
               >
                 לתיאום פגישת ייעוץ
                 <ArrowIcon
