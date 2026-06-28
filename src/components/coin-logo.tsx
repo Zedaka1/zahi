@@ -3,11 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "./logo";
 
-// הלוגו בפוטר מסתובב כמו מטבע אמיתי פעם אחת כשהוא נכנס לתצוגה,
-// מאט בהדרגה ונעצר ממורכז וקדמי.
+// הלוגו בפוטר מסתובב כמו מטבע אמיתי: פעם אחת כשנכנס לתצוגה, ושוב בכל hover.
 export function CoinLogo() {
   const ref = useRef<HTMLDivElement>(null);
-  const [spin, setSpin] = useState(false);
+  const [spinning, setSpinning] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -15,7 +14,7 @@ export function CoinLogo() {
     const obs = new IntersectionObserver(
       (entries) => {
         if (entries[0]?.isIntersecting) {
-          setSpin(true);
+          setSpinning(true);
           obs.disconnect();
         }
       },
@@ -26,11 +25,16 @@ export function CoinLogo() {
   }, []);
 
   return (
-    <div ref={ref} className="w-full [perspective:1000px]">
+    <div
+      ref={ref}
+      className="w-full cursor-pointer [perspective:1000px]"
+      onMouseEnter={() => setSpinning(true)}
+      onAnimationEnd={() => setSpinning(false)}
+    >
       <Logo
         variant="onDark"
-        className={`w-full justify-center${spin ? " coin-spin" : ""}`}
-        imgClassName="h-44 w-auto lg:h-52"
+        className={`w-full justify-center${spinning ? " coin-spin" : ""}`}
+        imgClassName="h-36 w-auto lg:h-44"
       />
     </div>
   );

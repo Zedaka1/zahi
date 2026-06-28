@@ -10,9 +10,12 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-6 px-5 py-8 lg:grid-cols-4 lg:gap-10 lg:px-8 lg:py-14">
         <div className="col-span-2 lg:col-span-1">
           <CoinLogo />
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel">
-            חידוש, השבחה ועבודות גמר לווילות, בתים פרטיים ומבני ציבור — מבטון עד
-            מפתח. עבודה מקצועית, נקייה ואמינה.
+          <p className="mx-auto mt-5 max-w-xs text-center text-sm leading-relaxed text-steel">
+            חידוש, השבחה ועבודות גמר לווילות,
+            <br />
+            בתים פרטיים ומבני ציבור — מבטון עד מפתח.
+            <br />
+            עבודה מקצועית, נקייה ואמינה.
           </p>
         </div>
 

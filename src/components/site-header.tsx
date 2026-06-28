@@ -82,7 +82,7 @@ export function SiteHeader() {
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:h-[92px] lg:px-8">
           <a href="#home" onClick={(e) => goTo(e, "home")} aria-label="לראש העמוד">
-            <Logo variant="onLight" imgClassName="h-16 w-auto lg:h-[76px]" />
+            <Logo variant="onLight" imgClassName="h-[72px] w-auto lg:h-[84px]" />
           </a>
 
           {/* ניווט — דסקטופ */}
