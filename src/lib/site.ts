@@ -18,9 +18,9 @@ export const site = {
   email: "Zedaka1@gmail.com",
 
   // תמונת רקע להירו — להחליף בכל נתיב מתוך public/images
-  heroImage: "/images/HERO2.png",
+  heroImage: "/images/NEW_HERO.png",
   // תמונה לסקשן "עליי"
-  aboutImage: "/images/I_AM.png",
+  aboutImage: "/images/ME.png",
 
   areas: [
     "מרכז הארץ",

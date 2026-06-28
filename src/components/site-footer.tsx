@@ -101,7 +101,7 @@ export function SiteFooter() {
               className="group flex items-center gap-2 opacity-80 transition-opacity hover:opacity-100"
             >
               <span className="text-[8px] uppercase leading-none tracking-[0.2em]">
-                Powered by
+                Made by
               </span>
               <Image
                 src="/images/pixelia_logo_color.avif"

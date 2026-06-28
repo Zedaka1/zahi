@@ -15,10 +15,10 @@ export function Logo({
   return (
     <span className={`inline-flex items-center ${className}`}>
       <Image
-        src="/images/LOGO_NEW.png"
-        alt="צחי הג'ינג'י שיפוצים — הכל תחת קורה אחת"
-        width={554}
-        height={450}
+        src="/images/LAST_LOGO.png"
+        alt="צחי צדקה — בוני יוקרה"
+        width={577}
+        height={433}
         priority
         className={imgClassName}
       />

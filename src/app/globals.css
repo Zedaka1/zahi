@@ -39,6 +39,7 @@
 
   --font-display: var(--font-suez), Georgia, serif;
   --font-body: var(--font-assistant), system-ui, sans-serif;
+  --font-elegant: var(--font-frank), "Frank Ruhl Libre", Georgia, serif;
 
   --shadow-soft: 0 18px 44px -24px rgba(33, 27, 22, 0.28);
   --shadow-lift: 0 28px 60px -26px rgba(33, 27, 22, 0.34);

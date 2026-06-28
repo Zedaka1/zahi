@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Suez_One, Assistant } from "next/font/google";
+import { Suez_One, Assistant, Frank_Ruhl_Libre } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 
@@ -14,6 +14,14 @@ const assistant = Assistant({
   variable: "--font-assistant",
   subsets: ["hebrew", "latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+// גופן סריף עברי אצילי — לסלוגנים ולמבטאים יוקרתיים
+const frankRuhl = Frank_Ruhl_Libre({
+  variable: "--font-frank",
+  subsets: ["hebrew", "latin"],
+  weight: ["400", "500", "700", "900"],
   display: "swap",
 });
 
@@ -46,7 +54,7 @@ export default function RootLayout({
     <html
       lang="he"
       dir="rtl"
-      className={`${suez.variable} ${assistant.variable} h-full antialiased`}
+      className={`${suez.variable} ${assistant.variable} ${frankRuhl.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-paper text-text">
         <a href="#main" className="skip-link">

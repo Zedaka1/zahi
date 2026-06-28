@@ -14,26 +14,32 @@ export function About() {
   return (
     <section id="about" className="relative overflow-hidden bg-paper py-12 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2 lg:items-center lg:px-8">
-        {/* פלייסהולדר פורטרט */}
+        {/* פורטרט צחי + סלוגן מוטמע */}
         <Reveal>
-          <div className="relative">
-            <div className="corner-frame relative aspect-[4/5] overflow-hidden rounded-3xl border border-line shadow-lift">
-              <Image
-                src={site.aboutImage}
-                alt="פרויקט שיפוץ של צחי צדקה"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div
+          <div className="corner-frame relative aspect-[4/5] overflow-hidden rounded-3xl border border-line shadow-lift">
+            <Image
+              src={site.aboutImage}
+              alt="צחי צדקה — בוני יוקרה"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"
+            />
+            {/* סלוגן מוטמע — עיצוב אצילי */}
+            <div className="absolute inset-x-0 bottom-0 px-6 pb-9 pt-24 text-center sm:px-10 sm:pb-11">
+              <span
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent"
+                className="mx-auto mb-4 block h-px w-20 bg-gradient-to-r from-transparent via-gold to-transparent"
               />
-            </div>
-            {/* תג צף */}
-            <div className="absolute -bottom-5 right-6 rounded-2xl bg-ember px-5 py-4 text-white shadow-lift">
-              <div className="font-display text-2xl leading-none">ג-100</div>
-              <div className="mt-1 text-xs font-bold">רישיון קבלן</div>
+              <p className="font-elegant text-[1.6rem] leading-[1.3] tracking-wide text-white/95 [text-shadow:0_2px_24px_rgba(0,0,0,0.7)] sm:text-3xl lg:text-[2.1rem]">
+                הסטנדרט הגבוה שלכם.
+                <span className="mt-2 block font-bold text-gold">
+                  הביצוע המדויק שלנו.
+                </span>
+              </p>
             </div>
           </div>
         </Reveal>
