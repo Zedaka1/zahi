@@ -88,7 +88,7 @@ export async function sendLead(input: LeadInput): Promise<LeadResult> {
       </table>
       <div style="padding:16px 24px;color:#9a9085;font-size:12px">נשלח אוטומטית מטופס יצירת הקשר באתר ${esc(
         site.name,
-      )} ${esc(site.nickname)}.</div>
+      )}.</div>
     </div>
   </div></body></html>`;
 

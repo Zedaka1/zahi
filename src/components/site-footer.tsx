@@ -12,11 +12,11 @@ export function SiteFooter() {
           <Logo
             variant="onDark"
             className="w-full justify-center"
-            imgClassName="h-24 w-auto lg:h-32"
+            imgClassName="h-32 w-auto lg:h-40"
           />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel">
-            שיפוצים כלליים לווילות, בתים פרטיים ומבני ציבור — מבטון עד מפתח.
-            עבודה מקצועית, נקייה ואמינה.
+            חידוש, השבחה ועבודות גמר לווילות, בתים פרטיים ומבני ציבור — מבטון עד
+            מפתח. עבודה מקצועית, נקייה ואמינה.
           </p>
         </div>
 
@@ -89,8 +89,7 @@ export function SiteFooter() {
 
           <div className="flex flex-col items-center gap-3 text-xs text-steel sm:flex-row sm:gap-5">
             <span>
-              © {new Date().getFullYear()} {site.name} "{site.nickname}" · כל
-              הזכויות שמורות
+              © {new Date().getFullYear()} {site.name} · כל הזכויות שמורות
             </span>
             <span className="hidden h-1 w-1 rotate-45 bg-white/20 sm:inline-block" />
             <a

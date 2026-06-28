@@ -1,14 +1,7 @@
 import Image from "next/image";
 import { site } from "@/lib/site";
 import { Reveal } from "./reveal";
-import { CheckIcon } from "./icons";
-
-const points = [
-  "אחריות אישית על כל שלב בפרויקט",
-  "צוות מקצועי ומפרט עבודה ברור",
-  "עמידה בלוחות זמנים ובתקציב",
-  "שקיפות מלאה — בלי הפתעות בדרך",
-];
+import { WhatsappIcon } from "./icons";
 
 export function About() {
   return (
@@ -16,7 +9,7 @@ export function About() {
       <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2 lg:items-center lg:px-8">
         {/* פורטרט צחי + סלוגן מוטמע */}
         <Reveal>
-          <div className="corner-frame relative aspect-[4/5] overflow-hidden rounded-3xl border border-line shadow-lift">
+          <div className="corner-frame relative aspect-[5/4] overflow-hidden rounded-3xl border border-line shadow-lift">
             <Image
               src={site.aboutImage}
               alt="צחי צדקה — בוני יוקרה"
@@ -48,29 +41,42 @@ export function About() {
         <Reveal delay={120}>
           <p className="eyebrow mb-4">עליי</p>
           <h2 className="font-display text-4xl leading-tight text-text sm:text-5xl">
-            {site.name}{" "}
-            <span className="text-ember-gradient">{site.nickname}</span>
+            צחי צדקה{" "}
+            <span className="text-ember-gradient">בוני יוקרה</span>
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-muted">
-            קבלן שיפוצים כלליים בעל רישיון קבלן ג-100, המתמחה בפרויקטים של וילות,
-            בתים פרטיים ומבני ציבור — ומלווה כל פרויקט{" "}
-            <span className="font-semibold text-text">מהבטון ועד המפתח</span>.
+          <p className="mt-6 text-lg font-semibold leading-relaxed text-text">
+            מעל 30 שנות מצוינות בהנדסה, גמר והשבחת נכסים.
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-muted">
-            בנייה, אינסטלציה, חשמל, גבס, ריצוף, צבע — כל מה שקשור לעולם הבנייה
-            נעשה תחת ניהול אחד, עם אחריות אישית ועבודה נקייה ומסודרת.
+          <p className="mt-4 leading-relaxed text-muted">
+            צחי מתמחה בחידוש, שדרוג והשבחת וילות, בתים פרטיים, מבני ציבור
+            ופרויקטים ייחודיים — ברמת ביצוע בלתי מתפשרת.
+          </p>
+          <p className="mt-4 leading-relaxed text-muted">
+            בפרויקטים מורכבים ובהנדסת יוקרה, כל פרט עושה את ההבדל. לכן אדריכלים
+            ויזמים בוחרים בקבלן מורשה בעל ניסיון עשיר, שמלווה כל פרויקט באחריות
+            מלאה, אמינות מוחלטת וסטנדרט עבודה של המאיון העליון.
+          </p>
+          <p className="mt-4 leading-relaxed text-muted">
+            מהבטון ועד המפתח, אנו מובילים עבודות גמר, חידוש ומערכות מתקדמות, תוך
+            הקפדה מחמירה על לוחות זמנים, איכות חומרים ושירות אישי ומסור לאורך כל
+            הדרך.
+          </p>
+          <p className="mt-5 font-display text-xl leading-snug text-ember-deep sm:text-2xl">
+            כי חלל ייחודי ראוי לרמת הביצוע הגבוהה ביותר.
           </p>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {points.map((p) => (
-              <li key={p} className="flex items-start gap-3 text-text">
-                <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ember/12 text-ember-deep">
-                  <CheckIcon width={15} height={15} />
-                </span>
-                <span className="text-[15px] leading-snug">{p}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="mt-8 font-bold text-text">
+            📲 מתכננים פרויקט חדש, חידוש או עבודות גמר?
+          </p>
+          <a
+            href={site.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-ember px-7 py-4 text-base font-bold text-white shadow-lift transition-transform hover:scale-[1.03] active:scale-[0.98]"
+          >
+            <WhatsappIcon width={20} height={20} />
+            לתיאום פגישת ייעוץ ותכנון עם צחי
+          </a>
         </Reveal>
       </div>
     </section>

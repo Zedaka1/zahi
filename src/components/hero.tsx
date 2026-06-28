@@ -47,12 +47,14 @@ export function Hero() {
           <div className="max-w-2xl text-right">
             <p className="mb-5 flex items-center gap-3 text-sm font-bold tracking-[0.12em] text-gold">
               <span className="h-px w-10 bg-gold" />
-              {site.name} {site.nickname}
+              {site.name}
             </p>
 
-            <h1 className="display-xl font-display text-white">
-              שיפוצים כלליים
-              <span className="mt-2 block text-gold">מבטון עד מפתח</span>
+            <h1 className="font-display leading-[1.02] text-white text-[clamp(1.8rem,5.8vw,3.8rem)]">
+              <span className="block whitespace-nowrap">קבלנות ביצוע וגמר</span>
+              <span className="mt-2 block whitespace-nowrap text-gold">
+                מבטון עד המפתח
+              </span>
             </h1>
 
             {/* קו "מתכת מותכת" מתחת לכותרת — נחושת לוהטת → זהב */}

@@ -26,7 +26,7 @@ const frankRuhl = Frank_Ruhl_Libre({
 });
 
 export const metadata: Metadata = {
-  title: `${site.name} "${site.nickname}" | שיפוצים כלליים — ${site.tagline}`,
+  title: `${site.name} | שיפוצים כלליים — ${site.tagline}`,
   description: site.subtitle,
   keywords: [
     "שיפוצים",
@@ -35,10 +35,9 @@ export const metadata: Metadata = {
     "שיפוץ בתים פרטיים",
     "שיפוץ מבני ציבור",
     "צחי צדקה",
-    "הג'ינג'י",
   ],
   openGraph: {
-    title: `${site.name} "${site.nickname}" — שיפוצים כלליים`,
+    title: `${site.name} — שיפוצים כלליים`,
     description: site.subtitle,
     locale: "he_IL",
     type: "website",

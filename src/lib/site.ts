@@ -5,10 +5,9 @@
 
 export const site = {
   name: "צחי צדקה",
-  nickname: "הג'ינג'י",
   role: "קבלן שיפוצים כלליים",
   tagline: "מבטון עד מפתח",
-  subtitle: "שיפוצים כלליים לווילות, בתים פרטיים ומבני ציבור — ברמת גימור גבוהה, מההריסה ועד מסירת המפתח.",
+  subtitle: "חידוש, השבחה ועבודות גמר לווילות, בתים פרטיים ומבני ציבור — מבטון עד מפתח. עבודה מקצועית, נקייה ואמינה.",
   license: "רישיון קבלן ג-100",
   experience: "ניסיון של שנים בעבודות בנייה וגמר",
 
@@ -18,9 +17,9 @@ export const site = {
   email: "Zedaka1@gmail.com",
 
   // תמונת רקע להירו — להחליף בכל נתיב מתוך public/images
-  heroImage: "/images/NEW_HERO.png",
+  heroImage: "/HERO_ZAHI.png",
   // תמונה לסקשן "עליי"
-  aboutImage: "/images/ME.png",
+  aboutImage: "/ZAHI_ME.png",
 
   areas: [
     "מרכז הארץ",
