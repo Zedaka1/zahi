@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Logo } from "./logo";
+import { CoinLogo } from "./coin-logo";
 import { navItems, site } from "@/lib/site";
 import { PhoneIcon, WhatsappIcon, MailIcon } from "./icons";
 import { LegalLinks } from "./legal";
@@ -9,11 +9,7 @@ export function SiteFooter() {
     <footer className="relative border-t-2 border-gold bg-ink text-white">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-6 px-5 py-8 lg:grid-cols-4 lg:gap-10 lg:px-8 lg:py-14">
         <div className="col-span-2 lg:col-span-1">
-          <Logo
-            variant="onDark"
-            className="w-full justify-center"
-            imgClassName="h-32 w-auto lg:h-40"
-          />
+          <CoinLogo />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel">
             חידוש, השבחה ועבודות גמר לווילות, בתים פרטיים ומבני ציבור — מבטון עד
             מפתח. עבודה מקצועית, נקייה ואמינה.
